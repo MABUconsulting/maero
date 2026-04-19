@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.maero.ro)",
+      "Bash(npm --version)",
+      "Bash(mkdir -p \"C:/Users/40733/OneDrive/Desktop/MABU/software/MAERO RECIPES/public/img\")",
+      "Bash(curl -sL -o logo.png \"https://gomagcdn.ro/domains3/maero.ro/files/company/banner-logo-3x-m-369-11028.png\")",
+      "Bash(curl -sL -o pudra.jpeg \"https://gomagcdn.ro/domains3/maero.ro/files/product/medium/pudra-de-vanilie-gourmet-din-madagascar-calitate-a-100-naturala-192881.jpeg\")",
+      "Bash(curl -sL -o pastai-bourbon.jpeg \"https://gomagcdn.ro/domains3/maero.ro/files/product/medium/pastai-de-vanilie-gourmet-din-madagascar-bourbon-calitate-a-100-naturala-17-20-cm-216274.jpeg\")",
+      "Bash(curl -sL -o pastai-imperiala.jpeg \"https://gomagcdn.ro/domains3/maero.ro/files/product/medium/pastai-de-vanilie-imperiala-din-madagascar-calitate-a-100-naturala-24-30cm-534937.jpeg\")",
+      "WebFetch(domain:www.themealdb.com)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(gh auth *)",
+      "Bash(railway whoami *)",
+      "Bash(where winget *)",
+      "Bash(powershell -Command \"Get-Command gh,railway -ErrorAction SilentlyContinue | Select-Object Name,Source\")",
+      "Bash(winget install *)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth status)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth login --hostname github.com --git-protocol https --web)"
+    ]
+  }
+}
