@@ -22,6 +22,7 @@ export type Recipe = {
   ingredients: string[];
   steps: string[];
   tip: string;
+  youtubeId?: string;
 };
 
 export const recipes: Recipe[] = [
@@ -58,6 +59,7 @@ export const recipes: Recipe[] = [
       'Răcește complet și lasă la frigider minimum 4 ore. Înainte de servire, presară zahăr pe suprafață și caramelizează cu arzătorul până se formează o crustă aurie.',
     ],
     tip: 'Păstaia golită de semințe nu se aruncă — pune-o într-un borcan cu zahăr și vei avea zahăr vanilat natural în câteva zile.',
+    youtubeId: 'XZYJ7yVeEi8',
   },
   {
     id: 'crema-zahar-ars',
@@ -92,6 +94,7 @@ export const recipes: Recipe[] = [
       'Răcește complet, apoi ține la frigider peste noapte. Răstoarnă pe un platou și servește rece.',
     ],
     tip: 'Pentru o cremă și mai intensă, folosește o jumătate de păstaie Imperială MAERO — mai lungă și mai aromată.',
+    youtubeId: '1ncxuOtu2II',
   },
   {
     id: 'papanasi-vanilie',
@@ -128,6 +131,7 @@ export const recipes: Recipe[] = [
       'Servește fiecare papanaș cu un gogoaș deasupra, două linguri de smântână și dulceață.',
     ],
     tip: 'Pudra de vanilie MAERO se poate presăra și peste smântână — accentuează aroma fără să adauge umezeală.',
+    youtubeId: 'IRFKF2bvIBI',
   },
   {
     id: 'inghetata-vanilie',
@@ -162,6 +166,7 @@ export const recipes: Recipe[] = [
       'Strecoară, răcește complet, apoi ține la frigider minimum 4 ore. Toarnă în mașina de înghețată sau într-un recipient la congelator, amestecând la fiecare 30 de minute timp de 3 ore.',
     ],
     tip: 'Nu arunca păstaia după infuzie — spal-o, usuc-o și îngroap-o într-un borcan cu zahăr pentru a obține zahăr vanilat natural.',
+    youtubeId: '_aLtxyKL70U',
   },
   {
     id: 'cozonac-vanilie',
@@ -201,6 +206,7 @@ export const recipes: Recipe[] = [
       'Unge cu gălbenuș și coace la 180°C pentru 50-60 de minute. Testează cu o scobitoare.',
     ],
     tip: 'Păstrează cozonacul în pungă curată de bumbac — așa rezistă moale și aromat 4-5 zile.',
+    youtubeId: 'FDiZ0hRhP_A',
   },
   {
     id: 'pastei-de-nata',
@@ -237,6 +243,7 @@ export const recipes: Recipe[] = [
       'Coace 10-12 minute, până se formează pete închise pe suprafață. Servește la temperatura camerei, presărate cu scorțișoară și pudră de vanilie MAERO.',
     ],
     tip: 'Secretul crustei caracteristice este cuptorul foarte fierbinte — 250°C sau chiar mai sus dacă poți.',
+    youtubeId: 'dq683pNYdhk',
   },
   {
     id: 'mousse-ciocolata-avocado',
@@ -271,6 +278,7 @@ export const recipes: Recipe[] = [
       'Porționează în pahare și ține la frigider minimum 30 de minute. Servește cu fructe de pădure.',
     ],
     tip: 'Avocado perfect copt = cedează ușor la apăsare. Dacă e prea tare, mousse-ul va fi granulos.',
+    youtubeId: 'TYlGQK0yyPo',
   },
   {
     id: 'patratele-curmale',
@@ -309,6 +317,7 @@ export const recipes: Recipe[] = [
       'Coace 25-30 de minute, până devine auriu. Răcește complet înainte de a tăia pătrățele.',
     ],
     tip: 'Funcționează și cu smochine uscate înmuiate, pentru o variantă și mai aromată.',
+    youtubeId: '23gU7xAJd6k',
   },
   {
     id: 'tort-ciocolata-vegan',
@@ -347,6 +356,7 @@ export const recipes: Recipe[] = [
       'Topește ciocolata cu 2 linguri de lapte vegetal și toarnă glazura peste tortul răcit.',
     ],
     tip: 'Poți adăuga 50 g nuci pecan tocate în aluat pentru textură suplimentară.',
+    youtubeId: 'Wd35AK1ppCY',
   },
   {
     id: 'jam-roly-poly',
@@ -381,6 +391,7 @@ export const recipes: Recipe[] = [
       'Servește ruladа feliată, caldă, cu sosul de vanilie peste.',
     ],
     tip: 'Dacă nu ai suet, folosește unt foarte rece, dat prin răzătoare.',
+    youtubeId: 'EGyTFV7SWPk',
   },
   {
     id: 'biscuiti-jam-jam',
@@ -415,6 +426,7 @@ export const recipes: Recipe[] = [
       'Coace 12-14 minute, până marginile devin ușor aurii. Răcește pe grătar.',
     ],
     tip: 'Schimbă gemul cu lemon curd pentru o variantă citrică.',
+    youtubeId: 'yaNIuaNRqdI',
   },
   {
     id: 'lapte-vanilie-cald',
@@ -445,6 +457,7 @@ export const recipes: Recipe[] = [
       'Presară scorțișoară deasupra dacă dorești și servește imediat.',
     ],
     tip: 'Aceeași bucățică de păstaie se poate refolosi de 2-3 ori — aroma ei e puternică.',
+    youtubeId: 'QEwbtUPi4_E',
   },
   {
     id: 'limonada-vanilie',
@@ -477,6 +490,7 @@ export const recipes: Recipe[] = [
       'Servește cu gheață și o crenguță de rozmarin în pahar.',
     ],
     tip: 'Poți adăuga apă minerală în loc de apă plată pentru o versiune efervescentă.',
+    youtubeId: 'ipLu-Qq-gvE',
   },
   {
     id: 'latte-vanilie',
@@ -507,6 +521,7 @@ export const recipes: Recipe[] = [
       'Toarnă laptele peste espresso, pornind de sus și terminând cu un strat de spumă.',
     ],
     tip: 'Pentru versiunea rece (iced latte), toarnă espresso-ul peste cuburi de gheață, apoi adaugă laptele cu vanilie.',
+    youtubeId: 'ZQ-60spBO5E',
   },
   {
     id: 'ciocolata-calda',
@@ -541,6 +556,7 @@ export const recipes: Recipe[] = [
       'Toarnă în cești, adaugă frișcă și pudră de cacao deasupra.',
     ],
     tip: 'Un vârf de sare marină în ciocolată scoate în evidență aroma vaniliei.',
+    youtubeId: 'EL11OVDmxZM',
   },
   {
     id: 'smoothie-banana-vanilie',
@@ -572,6 +588,7 @@ export const recipes: Recipe[] = [
       'Servește imediat în pahar înalt.',
     ],
     tip: 'Adaugă o lingură de ovăz pentru un smoothie mai sățios.',
+    youtubeId: 'FiTJxy3BoBM',
   },
   {
     id: 'eggnog',
@@ -607,6 +624,7 @@ export const recipes: Recipe[] = [
       'Servește rece, cu nucșoară rasă proaspăt deasupra.',
     ],
     tip: 'Se ține la frigider 3 zile — aroma se intensifică de la o zi la alta.',
+    youtubeId: 'BjSLInrnYVM',
   },
   {
     id: 'chai-vanilie',
@@ -642,6 +660,7 @@ export const recipes: Recipe[] = [
       'Încălzește fără să fierbi, spumează cu un spumant și servește cald.',
     ],
     tip: 'Dublează cantitatea, strecoară, și ține concentratul la frigider o săptămână — diluezi cu lapte la nevoie.',
+    youtubeId: 'aTT4gAM2NIs',
   },
   {
     id: 'creme-anglaise',
@@ -674,6 +693,7 @@ export const recipes: Recipe[] = [
       'Strecoară, răcește, servește rece sau călduț.',
     ],
     tip: 'Peste o felie de tort de ciocolată, crème anglaise e diferența dintre bun și memorabil.',
+    youtubeId: 'qIqgPK39Npc',
   },
   {
     id: 'sos-caramel-vanilie',
@@ -707,6 +727,7 @@ export const recipes: Recipe[] = [
       'Pune înapoi pe foc mic 2 minute, amestecând, până devine omogen. Păstrează la borcan la frigider.',
     ],
     tip: 'Dacă se cristalizează, încălzește-l la bain-marie cu 1 lingură de smântână.',
+    youtubeId: 'UzS1BKTnyug',
   },
   {
     id: 'custard-vanilie',
@@ -739,6 +760,7 @@ export const recipes: Recipe[] = [
       'Acoperă cu folie alimentară lipită de suprafață și răcește.',
     ],
     tip: 'Pentru umplutură de gogoși, folosește-l călduț — se întinde mai ușor.',
+    youtubeId: 'Sr1I6Rfk63M',
   },
   {
     id: 'sos-vanilie-fructe',
@@ -770,6 +792,7 @@ export const recipes: Recipe[] = [
       'Adaugă smântâna și sarea, amestecă 1 minut. Scoate păstaia înainte de servit.',
     ],
     tip: 'Se ia bine pe clătite, waffle-uri și înghețată de vanilie.',
+    youtubeId: 'TjVO5dLLtDU',
   },
   {
     id: 'sos-vanilie-somon',
@@ -803,6 +826,7 @@ export const recipes: Recipe[] = [
       'Asezonează cu sare și piper alb. Servește imediat peste somon la grătar.',
     ],
     tip: 'Același sos merge perfect și peste piept de pui la tigaie sau scoici Saint-Jacques.',
+    youtubeId: 'aY9o9JFvzzg',
   },
   {
     id: 'pui-vanilie',
@@ -838,6 +862,7 @@ export const recipes: Recipe[] = [
       'Scoate păstaia. Asezonează, presară pătrunjel, servește cu piure sau orez.',
     ],
     tip: 'Merge excelent cu un piure de cartofi dulci — dulceața lor se leagă superb cu vanilia.',
+    youtubeId: 'ujmSteDQ34Q',
   },
   {
     id: 'cartofi-dulci-vanilie',
@@ -872,6 +897,7 @@ export const recipes: Recipe[] = [
       'Sărează ușor și servește imediat.',
     ],
     tip: 'O ploaie de mărar proaspăt deasupra — sună ciudat, dar funcționează extraordinar.',
+    youtubeId: '3QSTxYQHMO8',
   },
   {
     id: 'morcovi-vanilie',
@@ -904,6 +930,7 @@ export const recipes: Recipe[] = [
       'Asezonează, presară pătrunjel tocat, servește cald.',
     ],
     tip: 'Dacă adaugi câteva stafide aurii în sos, capeți o notă dulce suplimentară care merge super cu curcanul.',
+    youtubeId: 'vHMKld7pw_M',
   },
   {
     id: 'orez-lapte-vanilie',
@@ -936,6 +963,7 @@ export const recipes: Recipe[] = [
       'Scoate păstaia. Servește cald, presărat cu scorțișoară.',
     ],
     tip: 'Se transformă în desert de lux dacă adaugi stafide înmuiate în rom și o lingură de unt la final.',
+    youtubeId: 'ubaN3UE9c7E',
   },
   {
     id: 'clatite-vanilie',
@@ -971,6 +999,7 @@ export const recipes: Recipe[] = [
       'Servește cu sirop de arțar, fructe sau caramel de vanilie.',
     ],
     tip: 'Lasă aluatul 10 minute înainte de a găti — clătitele ies mai pufoase.',
+    youtubeId: 'OJyDfY9Byuo',
   },
   {
     id: 'pudding-paine',
@@ -1008,6 +1037,7 @@ export const recipes: Recipe[] = [
       'Coace la 170°C pentru 45-50 minute, până devine auriu deasupra și se prinde la mijloc.',
     ],
     tip: 'Servește cald cu crème anglaise — o combinație de neuitat.',
+    youtubeId: 'lUBjudHxC5M',
   },
   {
     id: 'mere-coapte-vanilie',
@@ -1043,5 +1073,6 @@ export const recipes: Recipe[] = [
       'Coace 30-35 minute, până merele devin moi. Servește cald, cu înghețată de vanilie.',
     ],
     tip: 'Păstrează sosul din tavă — e parfumat și se toarnă peste mere la servire.',
+    youtubeId: 'bw1bbqSnFuw',
   },
 ];

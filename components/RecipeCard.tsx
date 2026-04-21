@@ -97,6 +97,24 @@ export function RecipeCard({ recipe, defaultOpen = false }: { recipe: Recipe; de
                 {recipe.tip}
               </div>
 
+              {recipe.youtubeId && (
+                <div className="mt-10">
+                  <h3 className="font-display text-xl text-gold-dark mb-4 tracking-wide text-center">
+                    Vezi cum se prepară
+                  </h3>
+                  <div className="aspect-video rounded-sm overflow-hidden bg-black shadow-soft border border-gold/20">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${recipe.youtubeId}?rel=0`}
+                      title={`Video rețetă: ${recipe.title}`}
+                      loading="lazy"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              )}
+
               <ProductCTA productId={recipe.vanillaRecommended} />
             </motion.div>
           )}
