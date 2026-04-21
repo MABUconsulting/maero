@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Josefin_Sans, Playfair_Display } from 'next/font/google';
 import './globals.css';
+import { LocaleProvider } from '@/lib/i18n';
+import { LanguageSelector } from '@/components/LanguageSelector';
 
 const serif = Cormorant_Garamond({
   subsets: ['latin', 'latin-ext'],
@@ -35,7 +37,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ro" className={`${serif.variable} ${display.variable} ${mark.variable}`}>
-      <body className="font-serif">{children}</body>
+      <body className="font-serif">
+        <LocaleProvider>
+          <LanguageSelector />
+          {children}
+        </LocaleProvider>
+      </body>
     </html>
   );
 }

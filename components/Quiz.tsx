@@ -10,6 +10,8 @@ import type {
   Occasion,
 } from '@/data/recipes';
 import { Flourish } from './Flourish';
+import { useLocale } from '@/lib/i18n';
+import { useT } from '@/lib/dictionary';
 
 export type QuizAnswers = {
   category: Category;
@@ -19,71 +21,75 @@ export type QuizAnswers = {
   occasion: Occasion;
 };
 
+type StepKey = keyof QuizAnswers;
+
 type Step = {
-  key: keyof QuizAnswers;
+  key: StepKey;
   question: string;
   subtitle?: string;
   options: { value: string; label: string; note?: string }[];
 };
 
-const steps: Step[] = [
-  {
-    key: 'category',
-    question: 'Ce ai vrea să prepari?',
-    subtitle: 'Alege direcția — restul îți arătăm noi.',
-    options: [
-      { value: 'desert', label: 'Desert', note: 'Creme, torturi, înghețate' },
-      { value: 'bautura', label: 'Băutură', note: 'Calde sau răcoritoare' },
-      { value: 'sos', label: 'Sos dulce', note: 'Pentru fructe, clătite, pandișpan' },
-      { value: 'principal', label: 'Fel principal', note: 'Arome subtile de vanilie în gastronomie' },
-    ],
-  },
-  {
-    key: 'vanilla',
-    question: 'Ce vanilie Maero ai în bucătărie?',
-    subtitle: 'Dacă nu ai încă, îți arătăm unde se găsește.',
-    options: [
-      { value: 'pastai', label: 'Păstăi întregi', note: 'Bourbon sau Imperială — aroma profundă' },
-      { value: 'pudra', label: 'Pudră Gourmet', note: 'Se dizolvă instant, 100% naturală' },
-      { value: 'oricare', label: 'Am ambele', note: 'Alege libertatea' },
-      { value: 'niciuna', label: 'Nu am încă', note: 'Îți recomandăm ce se potrivește rețetei' },
-    ],
-  },
-  {
-    key: 'difficulty',
-    question: 'Ce nivel de dificultate cauți?',
-    options: [
-      { value: 'usor', label: 'Ușor', note: 'Pași simpli, rezultat sigur' },
-      { value: 'mediu', label: 'Mediu', note: 'Un pic de tehnică, multă satisfacție' },
-      { value: 'avansat', label: 'Avansat', note: 'Pentru zile când ai timp și chef' },
-      { value: 'oricare', label: 'Surprinde-mă', note: 'Oricare nivel e bun' },
-    ],
-  },
-  {
-    key: 'time',
-    question: 'Cât timp ai la dispoziție?',
-    options: [
-      { value: 'sub30', label: 'Sub 30 de minute', note: 'Rapid și bun' },
-      { value: '30la60', label: '30 – 60 de minute', note: 'Relaxat' },
-      { value: 'peste60', label: 'Peste o oră', note: 'Îmi iau timpul' },
-      { value: 'oricare', label: 'Nu contează', note: 'Arată-mi orice' },
-    ],
-  },
-  {
-    key: 'occasion',
-    question: 'Pentru ce ocazie?',
-    subtitle: 'Gust pentru tine sau pentru lume?',
-    options: [
-      { value: 'obisnuit', label: 'O zi obișnuită', note: 'Plăcerea de zi cu zi' },
-      { value: 'musafiri', label: 'Am musafiri', note: 'Ceva frumos de pus pe masă' },
-      { value: 'sarbatoare', label: 'Sărbătoare', note: 'Rețeta care se ține minte' },
-    ],
-  },
-];
-
 export function Quiz({ onComplete }: { onComplete: (a: QuizAnswers) => void }) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Partial<QuizAnswers>>({});
+  const { locale } = useLocale();
+  const t = useT(locale);
+
+  const steps: Step[] = [
+    {
+      key: 'category',
+      question: t.qCategory,
+      subtitle: t.qCategorySub,
+      options: [
+        { value: 'desert', label: t.optDesert, note: t.optDesertNote },
+        { value: 'bautura', label: t.optBautura, note: t.optBauturaNote },
+        { value: 'sos', label: t.optSos, note: t.optSosNote },
+        { value: 'principal', label: t.optPrincipal, note: t.optPrincipalNote },
+      ],
+    },
+    {
+      key: 'vanilla',
+      question: t.qVanilla,
+      subtitle: t.qVanillaSub,
+      options: [
+        { value: 'pastai', label: t.optPastai, note: t.optPastaiNote },
+        { value: 'pudra', label: t.optPudra, note: t.optPudraNote },
+        { value: 'oricare', label: t.optOricare, note: t.optOricareNote },
+        { value: 'niciuna', label: t.optNiciuna, note: t.optNiciunaNote },
+      ],
+    },
+    {
+      key: 'difficulty',
+      question: t.qDifficulty,
+      options: [
+        { value: 'usor', label: t.optUsor, note: t.optUsorNote },
+        { value: 'mediu', label: t.optMediu, note: t.optMediuNote },
+        { value: 'avansat', label: t.optAvansat, note: t.optAvansatNote },
+        { value: 'oricare', label: t.optSurprise, note: t.optSurpriseNote },
+      ],
+    },
+    {
+      key: 'time',
+      question: t.qTime,
+      options: [
+        { value: 'sub30', label: t.optSub30, note: t.optSub30Note },
+        { value: '30la60', label: t.opt30la60, note: t.opt30la60Note },
+        { value: 'peste60', label: t.optPeste60, note: t.optPeste60Note },
+        { value: 'oricare', label: t.optAnyTime, note: t.optAnyTimeNote },
+      ],
+    },
+    {
+      key: 'occasion',
+      question: t.qOccasion,
+      subtitle: t.qOccasionSub,
+      options: [
+        { value: 'obisnuit', label: t.optObisnuit, note: t.optObisnuitNote },
+        { value: 'musafiri', label: t.optMusafiri, note: t.optMusafiriNote },
+        { value: 'sarbatoare', label: t.optSarbatoare, note: t.optSarbatoareNote },
+      ],
+    },
+  ];
 
   const step = steps[current];
   const progress = ((current + 1) / steps.length) * 100;
@@ -104,12 +110,15 @@ export function Quiz({ onComplete }: { onComplete: (a: QuizAnswers) => void }) {
     if (current > 0) setCurrent(current - 1);
   };
 
+  const progressLabel = t.progressStep
+    .replace('{n}', String(current + 1))
+    .replace('{total}', String(steps.length));
+
   return (
     <div className="w-full max-w-2xl mx-auto px-6 py-10">
-      {/* Progres */}
       <div className="mb-10">
         <div className="flex justify-between items-center mb-3 text-xs tracking-[0.3em] uppercase text-cocoa/70 font-mark">
-          <span>Pasul {current + 1} din {steps.length}</span>
+          <span>{progressLabel}</span>
           <span>{Math.round(progress)}%</span>
         </div>
         <div className="h-[2px] w-full bg-cream-dark relative overflow-hidden">
@@ -160,7 +169,7 @@ export function Quiz({ onComplete }: { onComplete: (a: QuizAnswers) => void }) {
           {current > 0 && (
             <div className="mt-8 text-center">
               <button onClick={back} className="text-cocoa/60 hover:text-gold text-sm tracking-widest uppercase font-mark transition-colors">
-                ← Înapoi
+                {t.back}
               </button>
             </div>
           )}

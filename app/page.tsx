@@ -9,6 +9,8 @@ import { RecipeCard } from '@/components/RecipeCard';
 import { ProductCTA } from '@/components/ProductCTA';
 import { matchRecipes } from '@/lib/match';
 import type { Recipe } from '@/data/recipes';
+import { useLocale } from '@/lib/i18n';
+import { useT } from '@/lib/dictionary';
 
 type View = 'splash' | 'quiz' | 'results';
 
@@ -16,6 +18,8 @@ export default function Home() {
   const [view, setView] = useState<View>('splash');
   const [answers, setAnswers] = useState<QuizAnswers | null>(null);
   const [matches, setMatches] = useState<Recipe[]>([]);
+  const { locale } = useLocale();
+  const t = useT(locale);
 
   const handleComplete = (a: QuizAnswers) => {
     setAnswers(a);
@@ -45,24 +49,23 @@ export default function Home() {
               <Logo size="lg" />
               <Flourish className="w-48 h-5 mx-auto mt-6 mb-4" />
               <p className="font-display italic text-xl md:text-2xl text-cocoa mb-3">
-                Rețete cu vanilie
+                {t.tagline}
               </p>
               <p className="text-xs tracking-[0.4em] uppercase font-mark text-gold-dark mb-8">
-                Selecție premium · Madagascar
+                {t.selectionLabel}
               </p>
 
-              <p className="max-w-xl mx-auto text-ink/80 leading-relaxed text-lg mb-10">
-                Vanilia noastră nu este doar un ingredient — este o experiență.
-                Răspunde la câteva întrebări și îți arătăm <em>rețeta care ți se potrivește</em>,
-                împreună cu vanilia Maero recomandată pentru ea.
-              </p>
+              <p
+                className="max-w-xl mx-auto text-ink/80 leading-relaxed text-lg mb-10"
+                dangerouslySetInnerHTML={{ __html: t.intro }}
+              />
 
               <button onClick={() => setView('quiz')} className="btn-gold">
-                Începe călătoria
+                {t.startBtn}
               </button>
 
               <div className="mt-10 text-xs text-cocoa/60 tracking-wide">
-                5 pași · sub 1 minut · fără înregistrare
+                {t.splashFoot}
               </div>
             </div>
           </motion.section>
@@ -100,15 +103,15 @@ export default function Home() {
                 <Logo size="sm" />
                 <Flourish className="w-40 h-4 mx-auto mt-5 mb-5" />
                 <h1 className="font-display text-3xl md:text-5xl text-ink mb-3">
-                  {matches.length > 0 ? 'Rețetele tale' : 'Încă explorăm'}
+                  {matches.length > 0 ? t.yourRecipes : t.stillExploring}
                 </h1>
                 {matches.length > 0 ? (
                   <p className="italic text-cocoa/80 text-lg">
-                    Selectate pentru gustul tău. Alege una și hai la treabă.
+                    {t.selectedForYou}
                   </p>
                 ) : (
                   <p className="italic text-cocoa/80 text-lg">
-                    Nu am găsit o potrivire exactă — încearcă alte preferințe.
+                    {t.noMatch}
                   </p>
                 )}
               </header>
@@ -116,7 +119,7 @@ export default function Home() {
               {answers?.vanilla === 'niciuna' && (
                 <div className="mb-10">
                   <p className="text-center text-cocoa italic mb-4">
-                    Începe cu alegerea vaniliei potrivite:
+                    {t.startWithVanilla}
                   </p>
                   <ProductCTA productId="bourbon" />
                 </div>
@@ -130,7 +133,7 @@ export default function Home() {
 
               <div className="text-center mt-16">
                 <button onClick={restart} className="btn-outline">
-                  ← Caută altă rețetă
+                  {t.backToQuiz}
                 </button>
                 <p className="mt-8 text-xs tracking-[0.3em] uppercase font-mark text-cocoa/60">
                   <a
@@ -139,7 +142,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="hover:text-gold transition-colors"
                   >
-                    Vezi toată selecția pe maero.ro →
+                    {t.seeAllMaero}
                   </a>
                 </p>
               </div>
@@ -150,7 +153,7 @@ export default function Home() {
 
       <footer className="text-center py-8 text-xs tracking-[0.25em] uppercase font-mark text-cocoa/50">
         <Logo size="sm" />
-        <p className="mt-3">Vanilie de Madagascar · 100% naturală</p>
+        <p className="mt-3">{t.footerTag}</p>
       </footer>
     </main>
   );
